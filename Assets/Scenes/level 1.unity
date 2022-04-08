@@ -138,6 +138,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2500030867869533675, guid: 7a9e7e8ad6426084ab82aca25765f6d5,
+        type: 3}
+      propertyPath: jumpForce
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2500030867869533684, guid: 7a9e7e8ad6426084ab82aca25765f6d5,
         type: 3}
       propertyPath: m_RootOrder
@@ -193,7 +198,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2500030867869533685, guid: 7a9e7e8ad6426084ab82aca25765f6d5,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500030867869533685, guid: 7a9e7e8ad6426084ab82aca25765f6d5,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1457333500388669879, guid: 7a9e7e8ad6426084ab82aca25765f6d5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7a9e7e8ad6426084ab82aca25765f6d5, type: 3}
 --- !u!1 &361825461
 GameObject:
@@ -209,9 +225,9 @@ GameObject:
   - component: {fileID: 361825467}
   - component: {fileID: 361825466}
   - component: {fileID: 361825465}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -17944,18 +17960,6 @@ CompositeCollider2D:
         Y: 239500000
       - X: -94500000
         Y: 240000000
-      - X: -159999900
-        Y: 240000000
-      - X: -159999900
-        Y: 240000041
-      - X: -159999959
-        Y: 240000100
-      - X: -170000041
-        Y: 240000100
-      - X: -170000100
-        Y: 240000041
-      - X: -170000100
-        Y: 240000000
       - X: -225000000
         Y: 240000000
       - X: -229500000
@@ -18382,26 +18386,6 @@ CompositeCollider2D:
         Y: 110000000
       - X: -105000000
         Y: 110000000
-    - - X: -370000000
-        Y: 370000000
-      - X: -370000000
-        Y: 380000000
-      - X: -362500000
-        Y: 380000000
-      - X: -360000000
-        Y: 382000000
-      - X: -360000000
-        Y: 390000000
-      - X: -350000000
-        Y: 390000000
-      - X: -350000000
-        Y: 380000000
-      - X: -357500000
-        Y: 380000000
-      - X: -360000000
-        Y: 378000000
-      - X: -360000000
-        Y: 370000000
     - - X: -330000000
         Y: 360000000
       - X: -330000000
@@ -18430,6 +18414,26 @@ CompositeCollider2D:
         Y: 365500000
       - X: -290000000
         Y: 360000000
+    - - X: -370000000
+        Y: 370000000
+      - X: -370000000
+        Y: 380000000
+      - X: -362500000
+        Y: 380000000
+      - X: -360000000
+        Y: 382000000
+      - X: -360000000
+        Y: 390000000
+      - X: -350000000
+        Y: 390000000
+      - X: -350000000
+        Y: 380000000
+      - X: -357500000
+        Y: 380000000
+      - X: -360000000
+        Y: 378000000
+      - X: -360000000
+        Y: 370000000
     - - X: -350000000
         Y: 360000000
       - X: -350000000
@@ -19078,6 +19082,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72e016c85687df84d9263a60e8d73c97, type: 3}
+--- !u!1 &935311364 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2500030867869533674, guid: 7a9e7e8ad6426084ab82aca25765f6d5,
+    type: 3}
+  m_PrefabInstance: {fileID: 171469794}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &935311365
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935311364}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.5856036}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.4640958}
+  m_EdgeRadius: 0
 --- !u!1 &1407294672
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class bularController : MonoBehaviour
 {
     private float moveInput;
@@ -9,23 +10,29 @@ public class bularController : MonoBehaviour
     private Rigidbody2D RB;
     public float jumpForce;
     private Vector3 playerScale;
-    
+    private BoxCollider2D col;
+    private LayerMask Mask;
     
     
     private void Start()
     {
         RB = this.GetComponent<Rigidbody2D>();
         playerScale = transform.localScale;
+        col = this.GetComponent<BoxCollider2D>();
+        Mask = LayerMask.GetMask("Ground");
+
     }
 
     private void Update()
     {
-        basemovement();   
+        
     }
 
 private void FixedUpdate()
     {
         moveInput = Input.GetAxis("Horizontal");
+        basemovement();
+        
 
         if (moveInput != 0)
         {
@@ -37,21 +44,47 @@ private void FixedUpdate()
 
     private void basemovement()
     {
-        if (Input.GetButton("Jump") && RB.velocity.y == 0)
+        
+
+
+        if (Input.GetButton("Jump") && IsGrounded()     )
         {
             RB.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         }
 
-        if(RB.velocity.y == 0)
+        if (IsGrounded())
         {
-            transform.Translate(moveInput * speed * Time.deltaTime, 0, 0);
+            
+
+           
+            RB.velocity = (new Vector2( moveInput * speed , RB.velocity.y));
+
         }
         else
         {
-            //RB.AddForce(new Vector2(moveInput * speed*Time.deltaTime, 0), ForceMode2D.Impulse);
+            
+          RB.AddForce(new Vector2(moveInput * speed, 0), ForceMode2D.Force);
+            
+
         }
+
     }
 
-    
+    public bool IsGrounded()
+    {
+
+        RaycastHit2D hit;
+        hit = Physics2D.Raycast(this.transform.position, Vector2.down, (col.size.y-col.offset.y)/2,Mask);
+
+
+        return hit.collider != null;
+        
+        
+
+
+
+
+
+    }
 
 }
