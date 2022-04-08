@@ -54,7 +54,7 @@ private void FixedUpdate()
 
         if (IsGrounded())
         {
-            
+                
 
            
             RB.velocity = (new Vector2( moveInput * speed , RB.velocity.y));
