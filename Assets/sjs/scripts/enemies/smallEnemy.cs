@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class smallEnemy : MonoBehaviour
 {
     public float speed;
@@ -33,6 +34,10 @@ public class smallEnemy : MonoBehaviour
         if (other.gameObject.tag == "bullet")
         {
             gameObject.SetActive(false);
+        } else 
+        {
+            other.gameObject.GetComponent<IDamageable<int>>().changeHealth(-1);
+
         }
     }
 

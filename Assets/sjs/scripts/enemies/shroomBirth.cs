@@ -14,11 +14,7 @@ public class shroomBirth : MonoBehaviour
         for (int i = 0; i < childCount; i++)
         {
             Children.Add(Instantiate(childPrefab, this.transform.position, Quaternion.identity));
-           /* foreach(GameObject child in Children)
-            {
-                
-                
-            } */
+         
         }
     }
     private void Update()

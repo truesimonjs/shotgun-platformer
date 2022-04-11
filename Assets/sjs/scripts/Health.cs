@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    int health = 5;
+    int health = 500;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -18,4 +18,6 @@ public class Health : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+
 }
