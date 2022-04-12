@@ -20,7 +20,7 @@ public class bularController : MonoBehaviour
         playerScale = transform.localScale;
         col = this.GetComponent<BoxCollider2D>();
         Mask = LayerMask.GetMask("Ground");
-
+        
     }
 
     private void Update()
@@ -54,17 +54,25 @@ private void FixedUpdate()
 
         if (IsGrounded())
         {
-                
-
+            
+           /* if ((moveInput == Mathf.Sign(RB.velocity.x) && Mathf.Abs(speed) < Mathf.Abs(RB.velocity.x)) == false)
+            {
+                RB.velocity = (new Vector2(Mathf.MoveTowards(RB.velocity.x, moveInput * speed, Mathf.Abs(moveInput * speed)), RB.velocity.y));
+            }
+           */
+            // this.transform.Translate(moveInput * speed*Time.deltaTime,0 , 0);
+            // RB.velocity = (new Vector2( moveInput * speed , RB.velocity.y));
            
-            RB.velocity = (new Vector2( moveInput * speed , RB.velocity.y));
-
         }
         else
         {
-            
-          RB.AddForce(new Vector2(moveInput * speed, 0), ForceMode2D.Force);
-            
+            if ((moveInput == Mathf.Sign(RB.velocity.x) && Mathf.Abs(speed)>Mathf.Abs(RB.velocity.x))== false )
+            {
+                RB.velocity = (new Vector2(Mathf.MoveTowards(RB.velocity.x, moveInput * speed, Mathf.Abs(moveInput * speed)), RB.velocity.y));
+            }
+           
+          //  RB.AddForce (new Vector2( moveInput * Mathf.Sqrt(speed*0.4F*1), 0), ForceMode2D.Impulse);
+            //RB.velocity = (new Vector2(Mathf.MoveTowards(RB.velocity.x, moveInput*speed,Mathf.Abs( moveInput*speed)), RB.velocity.y));
 
         }
 

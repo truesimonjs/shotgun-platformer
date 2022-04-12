@@ -29,16 +29,21 @@ public class smallEnemy : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "bullet")
         {
             gameObject.SetActive(false);
         } else 
         {
-            other.gameObject.GetComponent<IDamageable<int>>().changeHealth(-1);
+            IDamageable<int, float> opponent = other.gameObject.GetComponent<IDamageable<int, float>>();
+           if(opponent != null)
+            {
+                opponent.changeHealth(-1, this.transform.position.x);
+            }
+            
 
         }
     }
-
+    
 }
