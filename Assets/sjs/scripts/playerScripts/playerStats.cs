@@ -26,7 +26,7 @@ public class playerStats : MonoBehaviour, IDamageable<int,float>
         if (currentHealth <= 0)
         {
             
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
         ui.healthUpdate();
     }

@@ -55,11 +55,11 @@ private void FixedUpdate()
         if (IsGrounded())
         {
             
-           /* if ((moveInput == Mathf.Sign(RB.velocity.x) && Mathf.Abs(speed) < Mathf.Abs(RB.velocity.x)) == false)
+            if ((moveInput == Mathf.Sign(RB.velocity.x) && Mathf.Abs(speed) < Mathf.Abs(RB.velocity.x)) == false)
             {
                 RB.velocity = (new Vector2(Mathf.MoveTowards(RB.velocity.x, moveInput * speed, Mathf.Abs(moveInput * speed)), RB.velocity.y));
             }
-           */
+           
             // this.transform.Translate(moveInput * speed*Time.deltaTime,0 , 0);
             // RB.velocity = (new Vector2( moveInput * speed , RB.velocity.y));
            
